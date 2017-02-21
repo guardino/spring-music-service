@@ -69,6 +69,7 @@ public class AlbumController {
     public Album update(@RequestBody String json) {
         HashMap<String, String> map= ConvertingTools.JSONStringToHashMap(json);
         Album album = ConvertingTools.HashMapToAlbum(map);
+        repository.save(album);
         logger.info("Updating album " + album.getId());
         return album;
     }

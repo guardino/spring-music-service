@@ -52,8 +52,11 @@ public class ConvertingTools {
         try {
             map = mapper.readValue(jsonString, Map.class);
         } catch (Exception e) { e.printStackTrace(); }
+        System.out.println(map);
         for(Map.Entry<String, Object> entry : map.entrySet()) {
-            res.put(entry.getKey(), entry.getValue().toString());
+            String key = entry.getKey().trim();
+            Object value = entry.getValue();
+            res.put(key, value == null ? "" : value.toString());
         }
         return res;
     }
