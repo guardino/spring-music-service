@@ -61,6 +61,10 @@ dependencies {
     compile "org.webjars:angular-ui-bootstrap:0.10.0-1"
     compile "org.webjars:jquery:2.1.0-2"
 
+    // JSON reader https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+
+
     // Testing
     testCompile "junit:junit"
 }

@@ -25,6 +25,19 @@ public class Album {
     public Album() {
     }
 
+    @Override
+    public String toString() {
+        return "Album{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", artist='" + artist + '\'' +
+                ", releaseYear='" + releaseYear + '\'' +
+                ", genre='" + genre + '\'' +
+                ", trackCount=" + trackCount +
+                ", albumId='" + albumId + '\'' +
+                '}';
+    }
+
     public Album(String title, String artist, String releaseYear, String genre) {
         this.title = title;
         this.artist = artist;
