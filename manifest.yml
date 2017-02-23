@@ -1,6 +1,6 @@
 ---
 applications:
-- name: spring-music
+- name: jian_shi-spring-music
   path: build/libs/spring-music.jar
   buildpack: java_buildpack
   memory: 512M
