@@ -6,6 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 
 @SpringBootApplication
+//@EnableOAuth2Sso
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

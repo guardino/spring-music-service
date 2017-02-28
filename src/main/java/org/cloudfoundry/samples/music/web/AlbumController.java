@@ -63,11 +63,12 @@ public class AlbumController {
     public Album add(@RequestBody String json) {
         HashMap<String, String> map= ConvertingTools.JSONStringToHashMap(json);
         Album album = ConvertingTools.HashMapToAlbum(map);
+        repository.save(album);
         logger.info("Adding album " + album.getId());
         return album;
     }
 
-    @RequestMapping(value="/album",method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/album",method = RequestMethod.PUT)
     public Album update(@RequestBody String json) {
         HashMap<String, String> map= ConvertingTools.JSONStringToHashMap(json);
         Album album = ConvertingTools.HashMapToAlbum(map);

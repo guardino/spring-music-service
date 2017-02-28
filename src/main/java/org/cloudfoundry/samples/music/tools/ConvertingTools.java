@@ -62,7 +62,7 @@ public class ConvertingTools {
     }
 
     public static Album HashMapToAlbum(HashMap<String, String> map) {
-
+        System.out.println(map);
         Album album = new Album();
         RandomIdGenerator gen = new RandomIdGenerator();
         album.setAlbumId(map.get("albumId").trim());
@@ -70,7 +70,7 @@ public class ConvertingTools {
         album.setGenre(map.get("genre").trim());
         album.setTitle(map.get("title").trim());
         album.setReleaseYear(map.get("releaseYear").trim());
-        if(map.get("id") == null) {
+        if(map.get("id") == null || map.get("id") == "") {
             album.setId(gen.generateId());
         } else {
             album.setId(map.get("id").trim());
