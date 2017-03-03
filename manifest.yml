@@ -1,10 +1,10 @@
 ---
 applications:
-- name: jian_shi-spring-music
+- name: my-spring-music-service
   path: build/libs/spring-music.jar
   buildpack: java_buildpack
   memory: 512M
   services:
-      - postgresTest
+    - my-postgres
 env:
-    db_service_name: postgresTest
+  db_service_name: my-postgres
