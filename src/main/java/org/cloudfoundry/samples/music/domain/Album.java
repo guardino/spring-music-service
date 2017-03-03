@@ -2,10 +2,12 @@ package org.cloudfoundry.samples.music.domain;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-@Access(AccessType.FIELD)
 public class Album {
     @Id
     @Column(length=40)
