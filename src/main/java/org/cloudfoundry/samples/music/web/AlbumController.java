@@ -99,16 +99,14 @@ public class AlbumController {
         logger.info("Import csv file: " + multipart.getOriginalFilename());
         for(int i=0; i<rows.length; i++) {
             String[] row = csvUtil.getSingleRowData(i);
-            if(row[csvUtil.labelIndex("_class")].endsWith("domain.Album")) {
-                Album album = new Album(
-                        row[csvUtil.labelIndex("title")],
-                        row[csvUtil.labelIndex("artist")],
-                        row[csvUtil.labelIndex("releaseYear")],
-                        row[csvUtil.labelIndex("genre")]
-                );
-                repository.save(album);
-                logger.info("Adding album: " + album.getId());
-            }
+            Album album = new Album(
+                    row[csvUtil.labelIndex("title")],
+                    row[csvUtil.labelIndex("artist")],
+                    row[csvUtil.labelIndex("releaseYear")],
+                    row[csvUtil.labelIndex("genre")]
+            );
+            repository.save(album);
+            logger.info("Adding album: " + album.getId());
         }
         res += " : add " + (rows.length-1) + " albums.";
 
