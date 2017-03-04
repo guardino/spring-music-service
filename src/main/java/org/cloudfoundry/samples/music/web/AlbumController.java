@@ -41,7 +41,7 @@ public class AlbumController {
     @RequestMapping(
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<Album> getEmployee(@RequestParam("query") String query){
+    public Iterable<Album> getAlbum(@RequestParam("query") String query){
 
         List<Album> res = new ArrayList<>();
         Iterable<Album> all = repository.findAll();
