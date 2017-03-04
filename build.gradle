@@ -20,7 +20,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 
 version = '1.0'
 
@@ -33,11 +33,9 @@ repositories {
 
 dependencies {
     // Spring Boot
-    compile "org.springframework.boot:spring-boot-starter-web"
-    compile "org.springframework.boot:spring-boot-starter-actuator"
-    compile "org.springframework.boot:spring-boot-starter-data-jpa"
-    compile "org.springframework.boot:spring-boot-starter-data-mongodb"
-    compile "org.springframework.boot:spring-boot-starter-redis"
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.1.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.1.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.1.RELEASE'
 
     // https://mvnrepository.com/artifact/org.springframework.security/spring-security-config
     compile group: 'org.springframework.security', name: 'spring-security-web', version: '4.2.1.RELEASE'
@@ -58,9 +56,6 @@ dependencies {
     runtime "mysql:mysql-connector-java"
     runtime "postgresql:postgresql:9.1-901-1.jdbc4"
     runtime "com.microsoft.sqlserver:mssql-jdbc:6.1.0.jre8"
-
-    // Redis Persistence
-    compile "redis.clients:jedis"
 
     // Webjars
     compile "org.webjars:bootstrap:3.1.1"
