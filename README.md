@@ -16,6 +16,12 @@ The application can be started locally using the following command:
 ~~~
 $ ./gradlew assemble
 $ java -jar -Dspring.profiles.active=<profile> build/libs/spring-music.jar
+
+Since we are using spring boot 1.5.
+While pushing, using the following command which is pointing to java_buildpack 3.14 instead of the default version
+cf push -b https://github.com/cloudfoundry/java-buildpack.git#26cf03b
+For convenience, this has been added to the manifest.yml, so you can now just do "cf push".
+
 ~~~
 
 where `<profile>` is one of the following values:
@@ -96,3 +102,4 @@ $ cf restart
 #### Database drivers
 
 Database drivers for MySQL, Postgres, Microsoft SQL Server, MongoDB, and Redis are included in the project. To connect to an Oracle database, you will need to download the appropriate driver (e.g. from http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html?ssSourceSiteId=otnjp), add the driver .jar file to the `src/main/webapp/WEB-INF/lib` directory in the project, and re-build the application .war file using `./gradlew assemble`.
+
